@@ -32,6 +32,77 @@ document.addEventListener("DOMContentLoaded", () => {
     "(prefers-reduced-motion: reduce)"
   ).matches;
 
+  /* ==========================================================
+     1. MATRIX RAIN (HERO)
+     ========================================================== */
+
+  const hero = document.querySelector(".hero");
+
+  if (hero && !prefersReducedMotion) {
+    const canvas = document.createElement("canvas");
+    const context = canvas.getContext("2d", { alpha: true });
+
+    if (context) {
+      canvas.className = "matrix-rain";
+      canvas.setAttribute("aria-hidden", "true");
+      hero.prepend(canvas);
+
+      const fontSize = 13;
+      const columnWidth = 28;
+      const characters = "01{}<>/[];:+=";
+      let drops = [];
+
+      function resizeMatrix() {
+        const bounds = hero.getBoundingClientRect();
+        canvas.width = Math.max(1, Math.floor(bounds.width));
+        canvas.height = Math.max(1, Math.floor(bounds.height));
+
+        const columnCount = Math.ceil(canvas.width / columnWidth);
+        drops = Array.from({ length: columnCount }, () => ({
+          y: Math.random() * canvas.height,
+          speed: 7 + Math.random() * 8
+        }));
+      }
+
+      function drawMatrix() {
+        if (document.hidden) return;
+
+        context.clearRect(0, 0, canvas.width, canvas.height);
+        context.font = `${fontSize}px "JetBrains Mono", monospace`;
+        context.textAlign = "center";
+
+        drops.forEach((drop, column) => {
+          const x = column * columnWidth + columnWidth / 2;
+
+          for (let trail = 4; trail >= 0; trail -= 1) {
+            const y = drop.y - trail * fontSize;
+            if (y < 0 || y > canvas.height) continue;
+
+            const alpha = trail === 0 ? 0.36 : 0.045 + (4 - trail) * 0.025;
+            const color = column % 6 === 0 ? "63, 185, 80" : "88, 166, 255";
+            context.fillStyle = `rgba(${color}, ${alpha})`;
+            context.fillText(
+              characters[Math.floor(Math.random() * characters.length)],
+              x,
+              y
+            );
+          }
+
+          drop.y += drop.speed;
+          if (drop.y - fontSize * 4 > canvas.height) {
+            drop.y = -Math.random() * canvas.height * 0.35;
+            drop.speed = 7 + Math.random() * 8;
+          }
+        });
+      }
+
+      resizeMatrix();
+      drawMatrix();
+      window.setInterval(drawMatrix, 100);
+      window.addEventListener("resize", resizeMatrix, { passive: true });
+    }
+  }
+
 
   /* ==========================================================
      2. NAVBAR

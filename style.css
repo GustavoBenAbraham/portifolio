@@ -407,6 +407,8 @@ code,
   padding-inline: var(--space-6);
   text-align: center;
   position: relative;
+  isolation: isolate;
+  overflow: hidden;
   /* Subtle grid background */
   background-image:
     linear-gradient(rgba(88, 166, 255, 0.03) 1px, transparent 1px),
@@ -435,6 +437,17 @@ code,
   align-items: center;
   gap: var(--space-6);
   animation: hero-enter 0.8s var(--ease-out) both;
+}
+
+.matrix-rain {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  opacity: 0.35;
+  pointer-events: none;
 }
 
 /* Terminal path badge */
