@@ -78,7 +78,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const y = drop.y - trail * fontSize;
             if (y < 0 || y > canvas.height) continue;
 
-            const alpha = trail === 0 ? 0.36 : 0.045 + (4 - trail) * 0.025;
+            const alpha = trail === 0 ? 0.46 : 0.06 + (4 - trail) * 0.025;
             const color = column % 6 === 0 ? "63, 185, 80" : "88, 166, 255";
             context.fillStyle = `rgba(${color}, ${alpha})`;
             context.fillText(
