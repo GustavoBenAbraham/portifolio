@@ -437,17 +437,6 @@ code,
   animation: hero-enter 0.8s var(--ease-out) both;
 }
 
-.hero-photo {
-  width: clamp(5.25rem, 12vw, 7rem);
-  aspect-ratio: 4 / 5;
-  object-fit: cover;
-  object-position: 68% 30%;
-  border: 2px solid var(--border-subtle);
-  border-radius: 1.25rem;
-  box-shadow: 0 0 32px rgba(88, 166, 255, 0.14);
-  filter: brightness(1.12);
-}
-
 /* Terminal path badge */
 .hero-path {
   font-family: var(--font-mono);
