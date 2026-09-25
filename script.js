@@ -32,6 +32,29 @@ document.addEventListener("DOMContentLoaded", () => {
     "(prefers-reduced-motion: reduce)"
   ).matches;
 
+  if (window.matchMedia("(pointer: fine)").matches) {
+    const cursorGlow = document.createElement("div");
+    cursorGlow.className = "cursor-glow";
+    cursorGlow.setAttribute("aria-hidden", "true");
+    document.body.append(cursorGlow);
+
+    document.addEventListener("pointermove", (event) => {
+      if (event.pointerType !== "mouse") return;
+
+      cursorGlow.style.left = `${event.clientX}px`;
+      cursorGlow.style.top = `${event.clientY}px`;
+      cursorGlow.classList.add("is-visible");
+      cursorGlow.classList.toggle(
+        "is-interactive",
+        Boolean(event.target.closest("a, button, [role='button']"))
+      );
+    });
+
+    document.addEventListener("pointerleave", () => {
+      cursorGlow.classList.remove("is-visible", "is-interactive");
+    });
+  }
+
   /* ==========================================================
      1. MATRIX RAIN (HERO)
      ========================================================== */
