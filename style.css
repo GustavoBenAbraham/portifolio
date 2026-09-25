@@ -1074,7 +1074,8 @@ code,
   font-size: 0.875rem;
   line-height: 1.6;
   color: var(--text-primary);
-  white-space: pre;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
   opacity: 0;
   transform: translateY(4px);
   transition: opacity var(--duration-normal) var(--ease-out),
