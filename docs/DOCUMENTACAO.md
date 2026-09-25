@@ -16,6 +16,7 @@ O projeto é um site pessoal estático, desenvolvido com HTML5, CSS3 e JavaScrip
 | `style.css` | Variáveis de tema, tipografia, componentes, animações e regras responsivas. |
 | `script.js` | Interações do menu, efeitos de rolagem, animações e Canvas do banner. |
 | `README.md` | Apresentação do projeto e instruções rápidas para visitantes e colaboradores. |
+| `LICENSE` | Termos da licença MIT para este projeto. |
 
 ## 3. Organização da página
 
@@ -102,3 +103,7 @@ O JavaScript usa `IntersectionObserver` com alternativa para navegadores que nã
 - Preservar os atributos de acessibilidade ao editar controles e navegação.
 - Atualizar metadados de compartilhamento junto com mudanças no conteúdo ou endereço do site.
 - Evitar publicar dados pessoais que não devam ser públicos; links externos e informações de contato são visíveis a qualquer visitante.
+
+## 11. Licença
+
+Este repositório está publicado sob a licença MIT. Consulte o arquivo [`LICENSE`](../LICENSE) para ver o texto integral e as condições de uso, cópia, modificação e distribuição.

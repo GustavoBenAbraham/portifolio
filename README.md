@@ -1,112 +1,79 @@
-Markdown
-# 🚀 Gustavo Ben Abraham — Portfólio Pessoal
+# Gustavo Ben Abraham — Portfólio
 
-Bem-vindo(a) ao repositório do meu portfólio pessoal! Sou desenvolvedor Back-End em formação e criei este site para apresentar minha trajetória, projetos, tecnologias com as quais trabalho e formas de contato. A página conta com um visual inspirado em ferramentas de desenvolvimento, tema escuro e design totalmente responsivo.
+Sou Gustavo Ben Abraham, desenvolvedor Back-End em formação, com foco em Java, Spring Boot e PostgreSQL. Criei este portfólio para compartilhar minha trajetória, apresentar meus projetos e mostrar as tecnologias que estudo e utilizo.
 
 🔗 **Acesse meu portfólio:** [gustavobenabraham.github.io/portifolio](https://gustavobenabraham.github.io/portifolio/)
 
----
+## Sobre o projeto
 
-## 📌 Sobre o Projeto
+Neste repositório, mantenho o código-fonte do meu portfólio pessoal, publicado no GitHub Pages. Desenvolvi o site do zero com HTML, CSS e JavaScript nativos, sem frameworks ou etapa de compilação, priorizando simplicidade, desempenho e acessibilidade. Embora o portfólio seja uma aplicação Front-End, meu foco de estudo e atuação é Back-End, especialmente no ecossistema Java, Spring Boot e PostgreSQL.
 
-Desenvolvi este site do zero utilizando HTML, CSS e JavaScript nativos — sem a necessidade de frameworks ou etapas de compilação, focando em simplicidade, desempenho e acessibilidade. 
+No site, apresento:
 
-Embora o portfólio seja Front-End, meu foco principal de estudo e atuação é no **Back-End**, especialmente no ecossistema **Java, Spring Boot e PostgreSQL**.
+- minha trajetória de aprendizado e meu foco profissional;
+- projetos selecionados, com tecnologias e links disponíveis;
+- tecnologias que estudo e utilizo;
+- alguns dos meus interesses além da programação;
+- formas de entrar em contato comigo.
 
-No meu portfólio, você encontrará:
+## Funcionalidades
 
-- **Apresentação e trajetória:** Minha jornada e objetivos no desenvolvimento de software;
-- **Projetos em destaque:** Seleção dos meus principais projetos com links, descrições e tecnologias utilizadas;
-- **Tech Stack:** Ferramentas e linguagens que estudo e aplico no dia a dia;
-- **Interesses pessoais:** Um pouco sobre mim além do código;
-- **Contato:** Links diretos para minhas redes e status profissional atual.
+- Layout responsivo para desktop, tablet e celular.
+- Menu móvel acessível, com suporte à navegação por teclado, à tecla `Escape` e fechamento ao selecionar um link.
+- Cabeçalho que muda de aparência durante a rolagem.
+- Animação de caracteres no banner inicial, criada com Canvas.
+- Animações de entrada conforme as seções aparecem na tela.
+- Suporte à preferência do sistema por movimento reduzido (`prefers-reduced-motion`).
+- Estrutura semântica, rótulos acessíveis e metadados para mecanismos de busca e compartilhamento social (Open Graph).
 
----
+## Tecnologias
 
-## ✨ Funcionalidades
-
-- 📱 **Layout Responsivo:** Experiência otimizada para desktop, tablet e dispositivos móveis.
-- 🍔 **Menu Mobile Acessível:** Navegação intuitiva com suporte a teclado (tecla `Escape`) e fechamento automático ao clicar em um link.
-- 🎨 **Efeitos Visuais Dinâmicos:**
-  - Cabeçalho interativo que altera a aparência durante a rolagem.
-  - Banner inicial com animação de caracteres em Canvas.
-  - Animações de entrada (*scroll reveal*) suaves conforme o conteúdo entra na tela.
-- ♿ **Acessibilidade & Boas Práticas:**
-  - Respeito à preferência do sistema por movimento reduzido (`prefers-reduced-motion`).
-  - Estrutura semântica rigorosa e rótulos acessíveis (*aria-labels*).
-  - Metadados otimizados para SEO e compartilhamento social (*Open Graph*).
-
----
-
-## 🛠️ Tecnologias Utilizadas
-
-| Tecnologia | Finalidade |
+| Tecnologia | Uso no projeto |
 | --- | --- |
-| **HTML5** | Estruturação e semântica do conteúdo |
-| **CSS3** | Estilização, tema escuro, responsividade e animações |
-| **JavaScript (ES6+)** | Lógica de navegação, manipulação do DOM e animação em Canvas |
-| **Google Fonts** | Tipografia (Inter e JetBrains Mono) |
-| **GitHub Pages** | Hospedagem e deploy contínuo da aplicação estática |
+| HTML5 | Estrutura e semântica do conteúdo |
+| CSS3 | Layout, tema escuro, responsividade e animações |
+| JavaScript (ES6+) | Navegação, manipulação do DOM, Canvas e interações |
+| Google Fonts | Tipografia Inter e JetBrains Mono |
+| GitHub Pages | Hospedagem do site estático |
 
----
+## Como executar localmente
 
-## 💻 Como Executar Localmente
+Não utilizo dependências nem uma etapa de compilação. Para visualizar o site localmente, clone o repositório e abra `index.html` no navegador:
 
-Como o projeto utiliza tecnologias nativas, não é necessário instalar dependências nem rodar scripts de build.
-
-1. **Clone este repositório:**
-   ```bash
-   git clone [https://github.com/GustavoBenAbraham/portifolio.git](https://github.com/GustavoBenAbraham/portifolio.git)
-Acesse a pasta do projeto:
-
-Bash
+```bash
+git clone https://github.com/GustavoBenAbraham/portifolio.git
 cd portifolio
-Abra o arquivo index.html no seu navegador de preferência ou utilize a extensão Live Server no Visual Studio Code para ter suporte a hot reload.
+```
 
-📂 Estrutura do Repositório
-Plaintext
+Também posso abrir a pasta no Visual Studio Code e usar uma extensão como **Live Server** para servir os arquivos localmente.
+
+## Estrutura do repositório
+
+```text
 .
-├── index.html         # Conteúdo e estrutura principal
-├── style.css          # Estilos, variáveis de tema, responsividade e animações
-├── script.js          # Comportamentos interativos e efeitos de Canvas
-├── README.md          # Visão geral e guia rápido do projeto
+├── index.html          # Estrutura e conteúdo da página
+├── style.css           # Estilos, tema, responsividade e animações
+├── script.js           # Comportamentos e interações
+├── README.md           # Apresentação e instruções do projeto
+├── LICENSE             # Texto completo da licença MIT
 └── docs/
-    └── DOCUMENTACAO.md # Guia técnico detalhado de manutenção e estrutura
-🌐 Publicação e Deploy
-O deploy é realizado automaticamente via GitHub Pages a partir do endereço público:
-👉 https://gustavobenabraham.github.io/portifolio/
+    └── DOCUMENTACAO.md # Guia técnico e de manutenção
+```
 
-Para alterar ou atualizar a página, basta enviar os commits para a branch principal configurada em Settings → Pages. Para entender em detalhes a arquitetura e manutenção, consulte a Documentação do Projeto.
+## Publicação
 
-📬 Vamos nos conectar?
-🐙 GitHub: @GustavoBenAbraham
+Publiquei o site em [gustavobenabraham.github.io/portifolio](https://gustavobenabraham.github.io/portifolio/). Para disponibilizar atualizações, envio os arquivos à branch configurada em **Settings → Pages**. Como o projeto não exige uma etapa de build, o GitHub Pages publica diretamente os arquivos estáticos.
 
-💼 LinkedIn: Gustavo Ben Abraham
+Consulte a [documentação técnica](docs/DOCUMENTACAO.md) para conhecer a estrutura e os detalhes de manutenção do site.
 
-🌐 Portfólio: gustavobenabraham.github.io/portifolio
+## Encontre-me
 
-📜 Licença
-Este projeto está licenciado sob os termos da MIT License.
+- [GitHub](https://github.com/GustavoBenAbraham)
+- [LinkedIn](https://www.linkedin.com/in/gustavo-ben-abraham-81058119b/)
+- [Meu portfólio](https://gustavobenabraham.github.io/portifolio/)
 
-Plaintext
-MIT License
+No site, também compartilho meu status profissional e outras formas de contato.
 
-Copyright (c) 2026 Gustavo Ben Abraham Silva
+## Licença
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+Escolhi a licença MIT para este projeto. O texto completo, com as permissões e condições de uso, está no arquivo [LICENSE](LICENSE). Ao reutilizar o código, peço que mantenha o aviso de direitos autorais e o texto da licença. Também deixo claro que disponibilizo o projeto sem garantia, conforme os termos da MIT.
