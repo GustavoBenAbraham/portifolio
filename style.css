@@ -320,6 +320,20 @@ code,
   border-color: var(--accent);
 }
 
+.nav-link--cv {
+  color: var(--bg-base);
+  background-color: var(--accent);
+  border: 1px solid var(--accent);
+  margin-left: var(--space-1);
+}
+
+.nav-link--cv:hover,
+.nav-link--cv:focus-visible {
+  color: var(--bg-base);
+  background-color: var(--accent-hover);
+  border-color: var(--accent-hover);
+}
+
 /* Hamburger */
 .nav-hamburger {
   display: none;
@@ -423,6 +437,19 @@ code,
   background-color: var(--accent-dim);
   border-color: var(--accent);
   color: var(--text-primary);
+}
+
+.mobile-link--cv {
+  color: var(--bg-base);
+  background-color: var(--accent);
+  border-color: var(--accent);
+}
+
+.mobile-link--cv:hover,
+.mobile-link--cv:focus-visible {
+  color: var(--bg-base);
+  background-color: var(--accent-hover);
+  border-color: var(--accent-hover);
 }
 
 /* Focus visible for all focusable elements */
