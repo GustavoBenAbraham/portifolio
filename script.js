@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const hero = document.querySelector(".hero");
 
-  if (hero && !prefersReducedMotion) {
+  if (hero) {
     const canvas = document.createElement("canvas");
     const context = canvas.getContext("2d", { alpha: true });
 
