@@ -1544,7 +1544,9 @@ code,
   }
 
   .path-cursor {
-    animation: none;
+    animation: blink 1.2s step-end infinite !important;
+    animation-duration: 1.2s !important;
+    animation-iteration-count: infinite !important;
   }
 
   .status-dot {
