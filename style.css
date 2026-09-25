@@ -334,6 +334,19 @@ code,
   border-color: var(--accent-hover);
 }
 
+.nav-link--cv-en {
+  color: var(--accent);
+  border: 1px solid var(--border);
+  margin-left: var(--space-1);
+}
+
+.nav-link--cv-en:hover,
+.nav-link--cv-en:focus-visible {
+  color: var(--text-primary);
+  background-color: var(--accent-dim);
+  border-color: var(--accent);
+}
+
 /* Hamburger */
 .nav-hamburger {
   display: none;
@@ -450,6 +463,18 @@ code,
   color: var(--bg-base);
   background-color: var(--accent-hover);
   border-color: var(--accent-hover);
+}
+
+.mobile-link--cv-en {
+  color: var(--accent);
+  border: 1px solid var(--border);
+}
+
+.mobile-link--cv-en:hover,
+.mobile-link--cv-en:focus-visible {
+  color: var(--text-primary);
+  background-color: var(--accent-dim);
+  border-color: var(--accent);
 }
 
 /* Focus visible for all focusable elements */
