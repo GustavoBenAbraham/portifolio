@@ -1,0 +1,67 @@
+[
+  {
+    "id": "dindin-de-giro",
+    "featured": true,
+    "name": "DinDin de Giro",
+    "category": "Finanças pessoais e de pequenos negócios",
+    "language": "Java + React",
+    "subtitle": "Evolução do projeto Task Manager API",
+    "description": "Aplicação full stack para organizar contas, categorias e movimentações, com espaços separados para as finanças pessoais e do negócio.",
+    "highlights": [
+      "Autenticação JWT e acesso por espaço financeiro, com convites e revogação de permissões.",
+      "Contas a pagar e receber com liquidação transacional e fluxo de caixa que separa previsto de realizado.",
+      "API em Java, interface React, migrações Flyway e execução integrada com Docker."
+    ],
+    "technologies": ["Java 21", "Spring Boot", "Spring Security", "PostgreSQL", "React", "Docker"],
+    "repository": "https://github.com/GustavoBenAbraham/task-manager-api"
+  },
+  {
+    "id": "helpdesk-api",
+    "featured": true,
+    "name": "Helpdesk API",
+    "category": "Atendimento e regras de acesso",
+    "language": "Java",
+    "description": "API de chamados que conecta minha experiência com atendimento ao desenvolvimento Back-End: clientes acompanham seus chamados e agentes gerenciam o suporte.",
+    "highlights": [
+      "Perfis CUSTOMER e AGENT, com autenticação HTTP Basic e isolamento dos chamados por cliente.",
+      "Fluxo de atendimento com comentários, atribuição de responsáveis e registro de auditoria.",
+      "Testes de integração HTTP para autorização e fluxo dos chamados, além de CI no GitHub Actions."
+    ],
+    "technologies": ["Java 21", "Spring Boot", "Spring Security", "JPA", "H2", "Flyway"],
+    "repository": "https://github.com/GustavoBenAbraham/helpdesk-api"
+  },
+  {
+    "id": "cuscuzeria-gourmet",
+    "featured": false,
+    "name": "Cuscuzeria Gourmet",
+    "category": "Projeto para um negócio real",
+    "language": "TypeScript",
+    "description": "Cardápio digital com catálogo, carrinho persistente e montagem do pedido para envio pelo WhatsApp. Uma entrega web orientada à rotina de um restaurante.",
+    "highlights": ["Interface responsiva em React e TypeScript, com testes Vitest e cenários Playwright no repositório."],
+    "technologies": ["React", "TypeScript", "Vite", "Vitest"],
+    "repository": "https://github.com/GustavoBenAbraham/cuscuzeria-gourmet",
+    "demo": "https://gustavobenabraham.github.io/cuscuzeria-gourmet-site/"
+  },
+  {
+    "id": "tarot-exe",
+    "featured": false,
+    "name": "Tarot.exe",
+    "category": "Java além das APIs",
+    "language": "Java",
+    "description": "Aplicativo desktop de tarot com visual inspirado no Windows 95/98, funcionamento offline e histórico local de leituras.",
+    "highlights": ["Interface JavaFX, persistência local e testes JUnit para explorar regras de domínio fora do ambiente web."],
+    "technologies": ["Java 21", "JavaFX", "JUnit", "Maven"],
+    "repository": "https://github.com/GustavoBenAbraham/tarot-exe"
+  },
+  {
+    "id": "pokedex-fullstack",
+    "featured": false,
+    "name": "Pokédex Full Stack",
+    "category": "Integração com API externa",
+    "language": "Java + JavaScript",
+    "description": "Aplicação que conecta uma interface web à PokéAPI por meio de um Back-End em Spring Boot, com busca, filtros e paginação.",
+    "highlights": ["Separação de responsabilidades em Controller, Service e DTO para organizar a integração e os dados exibidos."],
+    "technologies": ["Java", "Spring Boot", "JavaScript", "PokéAPI"],
+    "repository": "https://github.com/GustavoBenAbraham/pokedex-fullstack"
+  }
+]

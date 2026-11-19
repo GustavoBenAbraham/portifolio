@@ -2,80 +2,68 @@
 
 # Gustavo Ben Abraham — Portfólio
 
-Sou Gustavo Ben Abraham, desenvolvedor Back-End em formação, com foco em Java, Spring Boot e PostgreSQL. Criei este portfólio para compartilhar minha trajetória, apresentar meus projetos e mostrar as tecnologias que estudo e utilizo.
+Sou Gustavo Ben Abraham Silva, estudante de Análise e Desenvolvimento de Sistemas na UniÍtalo e bolsista pelo Programa Pulse Mais. Meu foco é Back-End Java, com Spring Boot e PostgreSQL. Este portfólio conecta meus projetos à experiência com suporte, atendimento e resolução de problemas.
 
-🔗 **Acesse meu portfólio:** [gustavobenabraham.github.io/portifolio](https://gustavobenabraham.github.io/portifolio/)
+[Acesse meu portfólio](https://gustavobenabraham.github.io/portifolio/)
 
-## Sobre o projeto
+## O que o site apresenta
 
-Neste repositório, mantenho o código-fonte do meu portfólio pessoal, publicado no GitHub Pages. Desenvolvi o site do zero com HTML, CSS e JavaScript nativos, sem frameworks ou etapa de compilação, priorizando simplicidade, desempenho e acessibilidade. Embora o portfólio seja uma aplicação Front-End, meu foco de estudo e atuação é Back-End, especialmente no ecossistema Java, Spring Boot e PostgreSQL.
+- **DinDin de Giro e Helpdesk API** como projetos principais: domínio financeiro, autenticação, autorização e regras de negócio em Java.
+- **Cuscuzeria Gourmet, Tarot.exe e Pokédex Full Stack** como projetos complementares, cobrindo um negócio real, Java desktop e integração com API externa.
+- Experiência na **DASA**, com a Central de Manuais Operacionais desenvolvida em JavaScript, além das passagens pela Konecta, Shell e atuação freelancer com CFTV e redes.
+- Formação em ADS, cursos, tecnologias em contexto, currículos em português e inglês e o empreendimento Algoritmo Doce.
 
-No site, apresento:
+A [revisão de novembro de 2026](docs/REVISAO-PORTFOLIO-2026-11.md) registra os critérios da seleção, as evidências consultadas no GitHub e os limites de cada projeto.
 
-- minha trajetória de aprendizado e meu foco profissional;
-- projetos selecionados, com tecnologias e links disponíveis;
-- tecnologias que estudo e utilizo;
-- alguns dos meus interesses além da programação;
-- formas de entrar em contato comigo.
+## Tecnologias e funcionamento
 
-## Funcionalidades
+O site usa HTML, CSS e JavaScript nativos, com hospedagem no GitHub Pages. Inclui layout responsivo, menu acessível por teclado, animações em Canvas e suporte a movimento reduzido. Inter e JetBrains Mono são carregadas pelo Google Fonts, com fontes alternativas do sistema.
 
-- Layout responsivo para desktop, tablet e celular.
-- Menu móvel acessível, com suporte à navegação por teclado, à tecla `Escape` e fechamento ao selecionar um link.
-- Cabeçalho que muda de aparência durante a rolagem.
-- Animação de caracteres no banner inicial, criada com Canvas.
-- Animações de entrada conforme as seções aparecem na tela.
-- Suporte à preferência do sistema por movimento reduzido (`prefers-reduced-motion`).
-- Estrutura semântica, rótulos acessíveis e metadados para mecanismos de busca e compartilhamento social (Open Graph).
+Os projetos já ficam no HTML: não há chamadas ao GitHub durante a visita, dependências npm ou compilação para visualizar o site.
 
-## Tecnologias
-
-| Tecnologia | Uso no projeto |
-| --- | --- |
-| HTML5 | Estrutura e semântica do conteúdo |
-| CSS3 | Layout, tema escuro, responsividade e animações |
-| JavaScript (ES6+) | Navegação, manipulação do DOM, Canvas e interações |
-| Google Fonts | Tipografia Inter e JetBrains Mono |
-| GitHub Pages | Hospedagem do site estático |
-
-## Como executar localmente
-
-Não utilizo dependências nem uma etapa de compilação. Para visualizar o site localmente, clone o repositório e abra `index.html` no navegador:
+## Executar localmente
 
 ```bash
 git clone https://github.com/GustavoBenAbraham/portifolio.git
 cd portifolio
 ```
 
-Também posso abrir a pasta no Visual Studio Code e usar uma extensão como **Live Server** para servir os arquivos localmente.
+Abra `index.html` no navegador ou sirva a pasta com o Live Server. **Não é necessário Node.js para abrir o portfólio.**
 
-## Estrutura do repositório
+## Atualizar a seleção de projetos
 
-```text
-.
-├── index.html          # Estrutura e conteúdo da página
-├── style.css           # Estilos, tema, responsividade e animações
-├── script.js           # Comportamentos e interações
-├── README.md           # Apresentação e instruções do projeto
-├── LICENSE             # Texto completo da licença MIT
-└── docs/
-    └── DOCUMENTACAO.md # Guia técnico e de manutenção
+Edite [`data/projects.json`](data/projects.json), a fonte dos cartões. `featured: true` coloca o projeto no grupo principal; a ordem do array define a ordem dentro de cada grupo. `repository` é obrigatório e `demo` é opcional: sem esse campo, não aparece botão de aplicação.
+
+Após editar a seleção, use Node.js para regenerar o trecho estático em `index.html` e verificar a sincronização:
+
+```bash
+node scripts/sync-projects.mjs
+node scripts/sync-projects.mjs --check
 ```
 
-## Publicação
+O comando `--check` valida os dados e verifica se o HTML corresponde à configuração, sem alterar arquivos. Não edite os cartões gerados diretamente. Textos das demais seções continuam em `index.html`.
 
-Publiquei o site em [gustavobenabraham.github.io/portifolio](https://gustavobenabraham.github.io/portifolio/). Para disponibilizar atualizações, envio os arquivos à branch configurada em **Settings → Pages**. Como o projeto não exige uma etapa de build, o GitHub Pages publica diretamente os arquivos estáticos.
+## Estrutura
 
-Consulte a [documentação técnica](docs/DOCUMENTACAO.md) para conhecer a estrutura e os detalhes de manutenção do site.
+```text
+index.html                       # Página e cartões gerados
+style.css                        # Tema, layout e responsividade
+script.js                        # Navegação e animações
+data/projects.json               # Seleção e conteúdo dos projetos
+scripts/sync-projects.mjs         # Geração e verificação do HTML dos cartões
+docs/DOCUMENTACAO.md              # Guia técnico e manutenção
+docs/REVISAO-PORTFOLIO-2026-11.md   # Análise e critérios de destaque
+LICENSE                          # Licença MIT
+```
 
-## Encontre-me
+## Publicação e manutenção
 
-- [GitHub](https://github.com/GustavoBenAbraham)
-- [LinkedIn](https://www.linkedin.com/in/gustavo-ben-abraham-81058119b/)
-- [Meu portfólio](https://gustavobenabraham.github.io/portifolio/)
+O site mantém a hospedagem existente no GitHub Pages. Envie o HTML regenerado junto com os dados e demais alterações para a branch já configurada em **Settings → Pages**. A publicação continua servindo arquivos estáticos, sem nova infraestrutura ou etapa de compilação no servidor.
 
-No site, também compartilho meu status profissional e outras formas de contato.
+Consulte a [documentação técnica](docs/DOCUMENTACAO.md) para o formato dos dados e os cuidados de manutenção.
 
-## Licença
+## Contato e licença
 
-Escolhi a licença MIT para este projeto. O texto completo, com as permissões e condições de uso, está no arquivo [LICENSE](LICENSE). Ao reutilizar o código, peço que mantenha o aviso de direitos autorais e o texto da licença. Também deixo claro que disponibilizo o projeto sem garantia, conforme os termos da MIT.
+[GitHub](https://github.com/GustavoBenAbraham) · [LinkedIn](https://www.linkedin.com/in/gustavo-ben-abraham-silva/) · [Portfólio](https://gustavobenabraham.github.io/portifolio/)
+
+Licenciado sob [MIT](LICENSE). Ao reutilizar o código, mantenha o aviso de direitos autorais e os termos da licença.

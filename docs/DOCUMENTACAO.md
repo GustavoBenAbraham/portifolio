@@ -1,109 +1,88 @@
 # Documentação técnica — Portfólio
 
-Este documento descreve a estrutura, o comportamento e os procedimentos de manutenção do portfólio de Gustavo Ben Abraham.
+O portfólio de Gustavo Ben Abraham é um site estático em HTML, CSS e JavaScript, publicado no [GitHub Pages](https://gustavobenabraham.github.io/portifolio/). Não utiliza framework, bundler ou dependências npm. Node.js é usado somente na manutenção da seleção de projetos; a página continua abrindo diretamente no navegador.
 
-## 1. Visão geral
-
-O projeto é um site pessoal estático, desenvolvido com HTML5, CSS3 e JavaScript sem bibliotecas de execução ou frameworks. Os arquivos são servidos diretamente pelo GitHub Pages. Não há configuração de pacote, compilador, bundler ou processo de build no repositório.
-
-**Endereço publicado:** <https://gustavobenabraham.github.io/portifolio/>
-
-## 2. Arquivos e responsabilidades
+## Arquivos e responsabilidades
 
 | Arquivo | Responsabilidade |
 | --- | --- |
-| `index.html` | Metadados da página, conteúdo, seções, navegação, cartões e links. |
-| `style.css` | Variáveis de tema, tipografia, componentes, animações e regras responsivas. |
-| `script.js` | Interações do menu, efeitos de rolagem, animações e Canvas do banner. |
-| `README.md` | Apresentação do projeto e instruções rápidas para visitantes e colaboradores. |
-| `LICENSE` | Termos da licença MIT para este projeto. |
+| `index.html` | Metadados, seções, navegação, currículos e trecho gerado dos projetos. |
+| `style.css` | Tema, tipografia, componentes, responsividade e animações. |
+| `script.js` | Menu, rolagem, revelação de conteúdo e Canvas. |
+| `data/projects.json` | Fonte dos títulos, descrições, prioridades, tecnologias e links dos cartões. |
+| `scripts/sync-projects.mjs` | Validação dos dados, geração dos cartões e verificação de sincronização. |
+| `README.md` / `README.en.md` | Apresentação e instruções em português e inglês. |
+| `docs/REVISAO-PORTFOLIO-2026-11.md` | Evidências e critérios usados na curadoria dos projetos. |
 
-## 3. Organização da página
+## Conteúdo da página
 
-O documento HTML organiza o conteúdo nestas áreas principais:
+A apresentação posiciona Gustavo como estudante de ADS na UniÍtalo, bolsista pelo Programa Pulse Mais, com foco em Back-End Java. A seleção atual tem cinco projetos:
 
-1. **Apresentação:** nome, stack principal, objetivo profissional e atalhos para projetos, currículo e contato.
-2. **Projetos:** cartões com descrição, tecnologias e links diretos para código ou demonstração quando disponíveis.
-3. **Sobre mim:** resumo pessoal e informações de perfil.
-4. **Jornada:** etapas da trajetória de aprendizagem e objetivo profissional.
-5. **Tecnologias:** tecnologias que aparecem no perfil e nos projetos.
-6. **Além do código:** interesses pessoais e iniciativa Algoritmo Doce.
-7. **Status:** bloco visual de terminal com o foco de estudo e objetivo profissional.
-8. **Contato:** canais externos de contato e redes sociais.
+| Grupo | Ordem | Projeto |
+| --- | --- | --- |
+| Principal | 1 | DinDin de Giro, evolução do repositório `task-manager-api` |
+| Principal | 2 | Helpdesk API |
+| Complementar | 1 | Cuscuzeria Gourmet |
+| Complementar | 2 | Tarot.exe |
+| Complementar | 3 | Pokédex Full Stack |
 
-Os links da navegação apontam para os identificadores das seções, permitindo percorrer a página sem roteamento ou recarga.
+A trajetória profissional inclui DASA, Konecta/Decolar.com, Shell e atuação freelancer com CFTV e redes. Na DASA, o destaque é a Central de Manuais Operacionais, ferramenta interna em JavaScript, HTML e CSS; o site não oferece seu código ou acesso. Formação, cursos, tecnologias em contexto, Algoritmo Doce, currículos e contatos completam a apresentação.
 
-## 4. Estilos e responsividade
+A [revisão de novembro de 2026](REVISAO-PORTFOLIO-2026-11.md) explica por que esses projetos receberam destaque e diferencia funcionalidades verificadas, evidências de testes e limitações. Consulte esse documento ao atualizar descrições técnicas.
 
-O CSS concentra as cores, tipografia, espaçamentos e outras decisões visuais em propriedades customizadas no seletor `:root`. O tema combina fundo escuro com detalhes azuis e verdes. As fontes Inter e JetBrains Mono são carregadas pelo Google Fonts; fontes alternativas do sistema são definidas como fallback.
+## Editar os projetos
 
-Há regras específicas para larguras menores que 900 px, 768 px e 480 px. Essas regras reorganizam o layout e adaptam a navegação e os cartões às telas menores. A folha de estilos também inclui tratamento para a preferência `prefers-reduced-motion`.
+[`data/projects.json`](../data/projects.json) é um array de objetos. A ordem é preservada dentro de cada grupo: primeiro são exibidos os objetos com `featured: true`, depois os demais.
 
-## 5. Comportamentos JavaScript
+| Campo | Formato e uso |
+| --- | --- |
+| `id` | Identificador único com letras minúsculas, números e hífens; usado nos IDs dos títulos. |
+| `featured` | Booleano obrigatório; `true` coloca o cartão no grupo principal. |
+| `name`, `category`, `language` | Textos obrigatórios para nome, contexto e linguagem exibidos. |
+| `description` | Resumo obrigatório do problema e da solução. |
+| `highlights` | Array não vazio de textos com funcionalidades ou evidências relevantes. |
+| `technologies` | Array não vazio de textos para as tags de tecnologias. |
+| `repository` | URL HTTPS obrigatória para o botão “Ver código”. |
+| `demo` | URL HTTPS opcional para o botão “Abrir aplicação”. Omita quando não houver demonstração confirmada. |
+| `subtitle`, `note` | Textos opcionais para contexto adicional ou limitações. |
 
-O script inicializa após `DOMContentLoaded` e implementa:
+Execute os comandos na raiz do repositório:
 
-- **Canvas do banner:** cria uma animação decorativa de caracteres. O canvas é marcado como oculto para tecnologias assistivas e redesenhado ao redimensionar a janela; a animação pausa o desenho quando a aba está oculta.
-- **Cabeçalho:** adiciona ou remove a classe `scrolled` de acordo com a posição da página.
-- **Menu móvel:** alterna visibilidade e estado ARIA, fecha ao escolher um link, ao clicar fora, pressionar `Escape` ou aumentar a janela para o layout desktop.
-- **Indicador de rolagem:** desaparece após o início da rolagem.
-- **Revelação de conteúdo:** usa `IntersectionObserver` para exibir elementos `.reveal` quando entram na área visível, com alternativa sem observer.
-- **Terminal:** revela suas linhas sequencialmente quando o bloco aparece na tela.
-- **Links internos:** rola suavemente até a seção e considera a altura do cabeçalho; desativa a rolagem animada quando o usuário prefere movimento reduzido.
+```bash
+node scripts/sync-projects.mjs
+node scripts/sync-projects.mjs --check
+```
 
-## 6. Executar e editar
+O primeiro comando valida os dados e substitui apenas o trecho entre `<!-- PROJECTS:START -->` e `<!-- PROJECTS:END -->` em `index.html`. Os marcadores devem permanecer presentes uma única vez e na ordem correta. Textos e atributos são escapados pelo gerador antes de entrarem no HTML.
 
-### Pré-requisitos
+O segundo comando faz as mesmas validações e verifica se o HTML está sincronizado, sem gravar arquivos. Ele termina com erro se os dados forem inválidos ou os cartões estiverem desatualizados. A verificação não acessa os links nem executa os projetos externos.
 
-- Navegador moderno.
-- Git, caso deseje clonar o projeto.
-- Conexão à internet para carregar as fontes hospedadas pelo Google Fonts.
+Não edite os cartões gerados diretamente: a próxima geração sobrescreverá essas alterações. Versione `data/projects.json` e o `index.html` regenerado juntos. O navegador não lê esse JSON, não chama o GitHub e não depende de Node.js para mostrar os projetos.
 
-### Execução
+## Editar o restante do site
 
-Abra `index.html` diretamente no navegador. Para uma experiência local servida por HTTP, abra a pasta no VS Code e use uma extensão como Live Server. Não há dependências npm a instalar.
+- Textos de apresentação, experiência, formação, metadados e links de currículo ficam em `index.html`.
+- Cores, fontes, espaçamentos e layouts ficam em `style.css`.
+- Navegação e animações ficam em `script.js`.
+- Mantenha os dois READMEs alinhados quando mudar o perfil, a seleção ou o procedimento de manutenção.
 
-### Atualizar conteúdo
+O LinkedIn atual é [gustavo-ben-abraham-silva](https://www.linkedin.com/in/gustavo-ben-abraham-silva/). Ao trocar currículos, confirme os caminhos usados pelos botões. Ao mudar o endereço público, revise também os metadados Open Graph e Twitter no `<head>`.
 
-- Edite textos, metadados, seções e cartões em `index.html`.
-- Edite cores, tipografia, espaçamento, breakpoint e layout em `style.css`.
-- Edite interações e animações em `script.js`.
-- Ao alterar um link de projeto, confira tanto o endereço do repositório como o da demonstração. Os links exibidos devem apontar para os destinos específicos do projeto.
+## Estilos, interação e acessibilidade
 
-O título, a descrição, o autor e os metadados Open Graph e Twitter ficam no `<head>` de `index.html`. Atualize esses campos quando o nome, resumo ou endereço público do site mudar.
+O tema usa propriedades customizadas em `:root`, fundo escuro e detalhes azuis e verdes. Inter e JetBrains Mono vêm do Google Fonts, com alternativas do sistema. Os projetos principais usam duas colunas e os complementares, três; até 900 px, ambos passam para uma coluna. Há ajustes adicionais em 768 px e 480 px.
 
-## 7. Publicação no GitHub Pages
+O JavaScript controla o menu móvel, os estados ARIA, o cabeçalho durante a rolagem, o Canvas decorativo e as animações de entrada. O menu fecha ao selecionar um link, pressionar `Escape`, clicar fora ou voltar ao layout desktop. A preferência `prefers-reduced-motion` reduz os efeitos; o conteúdo principal permanece no HTML mesmo sem JavaScript.
 
-O projeto não exige etapa de build. Para publicar uma atualização:
+Preserve a estrutura semântica, a hierarquia dos títulos, os nomes acessíveis, o foco visível e os estados do menu ao editar a página.
 
-1. Faça as alterações nos arquivos do site.
-2. Confira a página localmente em um navegador.
-3. Registre e envie as alterações para o repositório GitHub.
-4. Nas definições **Settings → Pages**, confirme a branch e a pasta de origem selecionadas para publicação.
-5. Aguarde a conclusão da publicação e acesse o endereço configurado.
+## Visualizar e publicar
 
-Se o endereço do site mudar, atualize também os campos `og:url` e os demais metadados relacionados em `index.html`.
+1. Abra `index.html` no navegador ou sirva a pasta com Live Server. Não há instalação npm.
+2. Se mudou os projetos, execute a geração e `--check`.
+3. Confira desktop e celular, navegação por teclado, downloads dos currículos e destinos dos links.
+4. Envie os arquivos atualizados para a branch já configurada em **Settings → Pages**.
 
-## 8. Acessibilidade e compatibilidade
+A hospedagem existente no GitHub Pages continua servindo os arquivos estáticos. O gerador é uma ferramenta local de edição: não exige alterar a infraestrutura nem acrescentar compilação à publicação.
 
-O HTML usa landmarks como `header`, `nav`, `main` e `footer`, títulos hierárquicos, nomes acessíveis para controles e estados ARIA no menu móvel. Efeitos decorativos são ocultados da árvore de acessibilidade. As animações de revelação e a rolagem consideram a preferência por movimento reduzido.
-
-O JavaScript usa `IntersectionObserver` com alternativa para navegadores que não o disponibilizam. O conteúdo principal permanece em HTML, sem depender de uma API para ser carregado.
-
-## 9. Dependências e serviços externos
-
-- **Google Fonts:** entrega Inter e JetBrains Mono; as fontes alternativas do sistema continuam disponíveis se o serviço não puder ser carregado.
-- **GitHub Pages:** hospeda os arquivos estáticos do site.
-- Links de projetos e redes sociais direcionam para serviços externos. O site não inclui uma API de back-end ou armazenamento de dados próprio.
-
-## 10. Manutenção recomendada
-
-- Manter os links de projetos, contato e demonstrações atualizados.
-- Conferir a visualização em desktop e celular ao alterar a estrutura ou o CSS.
-- Preservar os atributos de acessibilidade ao editar controles e navegação.
-- Atualizar metadados de compartilhamento junto com mudanças no conteúdo ou endereço do site.
-- Evitar publicar dados pessoais que não devam ser públicos; links externos e informações de contato são visíveis a qualquer visitante.
-
-## 11. Licença
-
-Este repositório está publicado sob a licença MIT. Consulte o arquivo [`LICENSE`](../LICENSE) para ver o texto integral e as condições de uso, cópia, modificação e distribuição.
+O site usa Google Fonts para tipografia e links para serviços externos; não possui API própria ou armazenamento de dados de visitantes. O código está sob a [licença MIT](../LICENSE).

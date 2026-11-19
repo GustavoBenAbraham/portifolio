@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Resume of Gustavo Ben Abraham, junior backend developer focused on Java and Spring Boot." />
-  <title>Resume — Gustavo Ben Abraham</title>
+  <meta name="description" content="Resume of Gustavo Ben Abraham Silva: software development, Java, Spring Boot, and experience in operational support and customer service." />
+  <title>Resume — Gustavo Ben Abraham Silva</title>
   <style>
     :root { color-scheme: light; --ink: #172435; --muted: #536274; --accent: #176b87; --line: #dbe3e9; --paper: #fff; --soft: #eef5f7; }
     * { box-sizing: border-box; }
@@ -37,10 +37,10 @@
       .skills { grid-template-columns: 1fr; }
       .entry-heading { align-items: flex-start; flex-direction: column; gap: 0; }
     }
-    @page { size: A4; margin: 0; }
+    @page { size: A4; margin: 15mm 17mm; }
     @media print {
       body { background: #fff; font-size: 9.5pt; }
-      .resume { width: 210mm; min-height: 297mm; margin: 0; padding: 15mm 17mm; box-shadow: none; }
+      .resume { width: auto; min-height: 0; margin: 0; padding: 0; box-shadow: none; }
       a { color: inherit; }
       section, .entry, .business { break-inside: avoid; }
       * { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
@@ -50,91 +50,130 @@
 <body>
   <main class="resume">
     <header class="header">
-      <h1>Gustavo Ben Abraham</h1>
-      <p class="role">JUNIOR BACKEND DEVELOPER</p>
+      <h1>Gustavo Ben Abraham Silva</h1>
+      <p class="role">SOFTWARE DEVELOPMENT &amp; TECHNOLOGY</p>
       <div class="contact" aria-label="Contact information">
         <span>São Paulo, Brazil</span>
         <a href="tel:+5511979865999">+55 (11) 97986-5999</a>
         <a href="mailto:gustavobenabraham@gmail.com">gustavobenabraham@gmail.com</a>
-        <a href="https://www.linkedin.com/in/gustavo-ben-abraham-81058119b/">LinkedIn</a>
+        <a href="https://www.linkedin.com/in/gustavo-ben-abraham-silva/">LinkedIn</a>
         <a href="https://github.com/GustavoBenAbraham">GitHub</a>
         <a href="https://gustavobenabraham.github.io/portifolio/">Portfolio</a>
       </div>
     </header>
 
+    <section aria-labelledby="objective-heading">
+      <h2 id="objective-heading">Objective</h2>
+      <p class="summary">Seeking entry-level opportunities in Software Engineering and Technology to apply and expand my development skills, solve complex problems with clean code, continuously learn, and drive impactful solutions for end-users.</p>
+    </section>
+
     <section aria-labelledby="profile-heading">
       <h2 id="profile-heading">Professional Summary</h2>
-      <p class="summary">Entry-level backend developer building practical experience through personal projects. Focused on Java, Spring Boot, REST APIs, and PostgreSQL. Seeking a junior opportunity to contribute to a collaborative team, keep learning, and help deliver reliable software.</p>
+      <p class="summary">Professional with a practical background in operational support, customer service, and technical troubleshooting using CRM systems such as Salesforce and Zendesk. Experience in software development building applications with Java, Spring Boot, REST APIs, JavaScript, and PostgreSQL. At DASA, independently developed a custom JavaScript web tool to centralize and streamline access to operational manuals.</p>
+    </section>
+
+    <section aria-labelledby="education-heading">
+      <h2 id="education-heading">Education</h2>
+      <article class="entry">
+        <div class="entry-heading">
+          <h3 class="entry-title">Systems Analysis and Development student</h3>
+        </div>
+        <p>UniÍtalo · Full Scholarship Holder (Pulse Mais Program)</p>
+      </article>
     </section>
 
     <section aria-labelledby="skills-heading">
-      <h2 id="skills-heading">Technical Skills</h2>
+      <h2 id="skills-heading">Skills &amp; Technologies</h2>
       <div class="skills">
-        <p class="skill"><strong>Backend:</strong> Java, Spring Boot, REST APIs, layered architecture, Controller/Service/DTO</p>
-        <p class="skill"><strong>Databases:</strong> PostgreSQL, SQL, Flyway</p>
-        <p class="skill"><strong>Development:</strong> global exception handling, third-party API integration, pagination and filtering</p>
-        <p class="skill"><strong>Tools &amp; Web:</strong> Maven, Git, GitHub, JavaScript, TypeScript, HTML, CSS</p>
+        <p class="skill"><strong>Languages &amp; Technologies:</strong> Java, Spring Boot, REST APIs, JPA/Hibernate, JavaScript, TypeScript, Python, SQL, PostgreSQL, Flyway</p>
+        <p class="skill"><strong>Tools &amp; Platforms:</strong> Git, GitHub, VS Code, IntelliJ IDEA, Eclipse, Docker, Salesforce CRM, Zendesk, Jira</p>
+        <p class="skill"><strong>Methodologies &amp; Processes:</strong> Scrum, Kanban, technical documentation, incident management, KPI monitoring, NPS</p>
+        <p class="skill"><strong>Core Competencies:</strong> customer focus, problem solving, analytical thinking, team collaboration, continuous learning</p>
       </div>
     </section>
 
     <section aria-labelledby="projects-heading">
-      <h2 id="projects-heading">Selected Projects</h2>
+      <h2 id="projects-heading">Featured Projects</h2>
       <article class="entry">
         <div class="entry-heading">
           <h3 class="entry-title">Task Manager API</h3>
-          <span class="entry-meta">Java · Spring Boot · PostgreSQL · Flyway · Maven</span>
+          <span class="entry-meta">Java · Spring Boot · PostgreSQL · JPA/Hibernate · Flyway · Maven</span>
         </div>
         <ul>
-          <li>Built a REST API for task management using a layered architecture and global exception handling.</li>
-          <li>Personal project focused on reliability, code organization, and backend development practices.</li>
+          <li>Developed a RESTful API using layered architecture, automated database migrations, and centralized exception handling.</li>
         </ul>
       </article>
       <article class="entry">
         <div class="entry-heading">
-          <h3 class="entry-title">Pokédex Full Stack</h3>
-          <span class="entry-meta">Java · Spring Boot · JavaScript · REST API</span>
+          <h3 class="entry-title">Full Stack Pokédex</h3>
+          <span class="entry-meta">Java · Spring Boot · JavaScript · PokéAPI</span>
         </div>
         <ul>
-          <li>Integrated an application with the PokéAPI, adding pagination and filters and separating responsibilities across Controller, Service, and DTO layers.</li>
+          <li>Integrated external REST APIs, structured Controller-Service-DTO pattern, and implemented pagination and dynamic filtering.</li>
         </ul>
       </article>
+      <article class="entry">
+        <div class="entry-heading">
+          <h3 class="entry-title">Operational Manuals Hub</h3>
+          <span class="entry-meta">JavaScript · HTML5 · CSS3</span>
+        </div>
+        <ul>
+          <li>Created a lightweight web tool to centralize internal documentation and enable fast keyword searching for operations teams at DASA.</li>
+        </ul>
+      </article>
+    </section>
+
+    <section aria-labelledby="courses-heading">
+      <h2 id="courses-heading">Courses &amp; Continuous Learning</h2>
+      <ul>
+        <li><strong>Java Development — FIAP Open:</strong> completed.</li>
+        <li><strong>Java Back-End Learning Path — Alura:</strong> in progress.</li>
+        <li><strong>Escola da Nuvem — Tech for All:</strong> AWS certification path in progress.</li>
+        <li><strong>Mentorship Program — Pulse Mais:</strong> career development, communication, and Agile methodologies; in progress.</li>
+      </ul>
     </section>
 
     <section aria-labelledby="experience-heading">
-      <h2 id="experience-heading">Entrepreneurial Experience</h2>
-      <article class="entry business">
+      <h2 id="experience-heading">Work Experience</h2>
+      <article class="entry">
         <div class="entry-heading">
-          <h3 class="entry-title">Founder &amp; Operator — Algoritmo Doce</h3>
-          <span class="entry-meta">Small business · Present</span>
+          <h3 class="entry-title">CCTV and Network Installation Assistant</h3>
+          <span class="entry-meta">Jan 2026 – Aug 2026</span>
         </div>
+        <p class="entry-meta">Freelance</p>
         <ul>
-          <li>Founded and run a small gourmet brigadeiro business, managing its digital presence and promotion.</li>
-          <li>Handle customer communication and orders, strengthening organization, autonomy, and communication skills.</li>
-          <li>Built the business website with TypeScript, Vite, HTML, and CSS to support its brand and make it easier for customers to place orders.</li>
+          <li>Supported hardware setup, structured network cabling, camera installation, and connectivity troubleshooting.</li>
         </ul>
       </article>
-    </section>
-
-    <section aria-labelledby="development-heading">
-      <h2 id="development-heading">Education &amp; Professional Development</h2>
       <article class="entry">
         <div class="entry-heading">
-          <h3 class="entry-title">Java Development Course</h3>
-          <span class="entry-meta">FIAP Open</span>
+          <h3 class="entry-title">Service Station Attendant</h3>
+          <span class="entry-meta">Jul 2025 – Jan 2026</span>
         </div>
+        <p class="entry-meta">Shell</p>
+        <ul>
+          <li>Handled customer interactions, Point of Sale (POS) operations, cash reconciliation, and strict adherence to safety protocols.</li>
+        </ul>
       </article>
       <article class="entry">
         <div class="entry-heading">
-          <h3 class="entry-title">Java Programming Course</h3>
-          <span class="entry-meta">Loiane Groner</span>
+          <h3 class="entry-title">Customer Support Analyst</h3>
+          <span class="entry-meta">Nov 2024 – Jan 2025</span>
         </div>
+        <p class="entry-meta">Konecta (Decolar.com Account)</p>
+        <ul>
+          <li>Provided omnichannel support via Salesforce CRM and Zendesk, managing tickets, resolving inquiries, and using AI tools to optimize workflow efficiency.</li>
+        </ul>
       </article>
       <article class="entry">
         <div class="entry-heading">
-          <h3 class="entry-title">Pulse Mais Mentoring Program</h3>
-          <span class="entry-meta">In progress</span>
+          <h3 class="entry-title">Operations Support Analyst / Customer Consultant</h3>
+          <span class="entry-meta">Jun 2023 – Oct 2024</span>
         </div>
-        <p>Mentoring focused on career preparation and entering the technology job market.</p>
+        <p class="entry-meta">DASA</p>
+        <ul>
+          <li>Delivered technical and operational support, monitored service metrics (NPS/ticket volume), and built an internal JavaScript tool to streamline procedure searches.</li>
+        </ul>
       </article>
     </section>
 
