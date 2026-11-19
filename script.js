@@ -32,7 +32,9 @@ document.addEventListener("DOMContentLoaded", () => {
     "(prefers-reduced-motion: reduce)"
   ).matches;
 
-  if (window.matchMedia("(pointer: fine)").matches) {
+  document.documentElement.classList.add("js-ready");
+
+  if (!prefersReducedMotion && window.matchMedia("(pointer: fine)").matches) {
     const cursorGlow = document.createElement("div");
     cursorGlow.className = "cursor-glow";
     cursorGlow.setAttribute("aria-hidden", "true");
@@ -61,7 +63,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const hero = document.querySelector(".hero");
 
-  if (hero) {
+  if (hero && !prefersReducedMotion) {
     const canvas = document.createElement("canvas");
     const context = canvas.getContext("2d", { alpha: true });
 
@@ -74,6 +76,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const columnWidth = 28;
       const characters = "01{}<>/[];:+=";
       let drops = [];
+      let heroVisible = true;
 
       function resizeMatrix() {
         const bounds = hero.getBoundingClientRect();
@@ -88,7 +91,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       function drawMatrix() {
-        if (document.hidden) return;
+        if (document.hidden || !heroVisible) return;
 
         context.clearRect(0, 0, canvas.width, canvas.height);
         context.font = `${fontSize}px "JetBrains Mono", monospace`;
@@ -123,6 +126,11 @@ document.addEventListener("DOMContentLoaded", () => {
       drawMatrix();
       window.setInterval(drawMatrix, 100);
       window.addEventListener("resize", resizeMatrix, { passive: true });
+      if ("IntersectionObserver" in window) {
+        new IntersectionObserver(([entry]) => {
+          heroVisible = entry.isIntersecting;
+        }).observe(hero);
+      }
     }
   }
 
@@ -158,6 +166,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!hamburger || !mobileMenu) return;
 
     hamburger.setAttribute("aria-expanded", "true");
+    hamburger.setAttribute("aria-label", "Fechar menu");
     mobileMenu.hidden = false;
     document.body.classList.add("menu-open");
   }
@@ -166,6 +175,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!hamburger || !mobileMenu) return;
 
     hamburger.setAttribute("aria-expanded", "false");
+    hamburger.setAttribute("aria-label", "Abrir menu");
     mobileMenu.hidden = true;
     document.body.classList.remove("menu-open");
   }
@@ -190,8 +200,9 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     document.addEventListener("keydown", (event) => {
-      if (event.key === "Escape") {
+      if (event.key === "Escape" && hamburger.getAttribute("aria-expanded") === "true") {
         closeMobileMenu();
+        hamburger.focus();
       }
     });
 
@@ -346,7 +357,7 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
       }
 
-      const target = document.querySelector(targetId);
+      const target = document.getElementById(targetId.slice(1));
 
       if (!target) {
         return;
@@ -376,6 +387,8 @@ document.addEventListener("DOMContentLoaded", () => {
       );
 
       closeMobileMenu();
+      if (!target.hasAttribute("tabindex")) target.setAttribute("tabindex", "-1");
+      target.focus({ preventScroll: true });
     });
   });
 

@@ -22,13 +22,13 @@ O projeto é um site pessoal estático, desenvolvido com HTML5, CSS3 e JavaScrip
 
 O documento HTML organiza o conteúdo nestas áreas principais:
 
-1. **Apresentação:** nome, foco profissional e atalhos para projetos e contato.
-2. **Sobre mim:** resumo pessoal e informações de perfil.
-3. **Jornada:** etapas da trajetória de aprendizagem e objetivo profissional.
-4. **Projetos:** cartões com descrição, tecnologias e links para código ou demonstração quando disponíveis.
+1. **Apresentação:** nome, stack principal, objetivo profissional e atalhos para projetos, currículo e contato.
+2. **Projetos:** cartões com descrição, tecnologias e links diretos para código ou demonstração quando disponíveis.
+3. **Sobre mim:** resumo pessoal e informações de perfil.
+4. **Jornada:** etapas da trajetória de aprendizagem e objetivo profissional.
 5. **Tecnologias:** tecnologias que aparecem no perfil e nos projetos.
 6. **Além do código:** interesses pessoais e iniciativa Algoritmo Doce.
-7. **Status:** bloco visual de terminal com apresentação progressiva das linhas.
+7. **Status:** bloco visual de terminal com o foco de estudo e objetivo profissional.
 8. **Contato:** canais externos de contato e redes sociais.
 
 Os links da navegação apontam para os identificadores das seções, permitindo percorrer a página sem roteamento ou recarga.
